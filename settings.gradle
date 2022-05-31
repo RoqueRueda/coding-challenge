@@ -3,12 +3,17 @@ pluginManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
     resolutionStrategy {
         eachPlugin {
             if (requested.id.id == 'dagger.hilt.android.plugin') {
                 // Hilt plugin cannot contain ':' so its resolved here
                 useModule("com.google.dagger:hilt-android-gradle-plugin:2.42")
+            }
+
+            if (requested.id.id == 'kotlinx-serialization') {
+                useModule("org.jetbrains.kotlin:kotlin-serialization:1.6.21")
             }
         }
     }
@@ -19,6 +24,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 }
 

@@ -4,7 +4,7 @@ import com.roque.rueda.gbm.coding.domain.error.ErrorResult
 
 sealed class DomainResult<out TResult : Any> {
 
-    data class Success<out TResult : Any>(val resultData: TResult) : DomainResult<TResult>() {
+    data class Success<out TResult : Any>(private val resultData: TResult) : DomainResult<TResult>() {
         override val data: TResult = resultData
         override var status: DomainStatus = DomainStatus.SUCCESS
     }

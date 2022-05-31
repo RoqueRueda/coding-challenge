@@ -24,6 +24,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "default"
+    productFlavors {
+        challenge {
+            dimension "default"
+            buildConfigField "String", "BASE_URL", "\"https://run.mocky.io\""
+            getIsDefault().set(true)
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -46,9 +56,20 @@ dependencies {
     implementation libs.navigation.ui
     implementation libs.bundles.room
     implementation libs.dagger.hilt
-    implementation project(path: ':domain')
-
+    implementation libs.androidx.lifecycle.viewmodel.ktx
+    implementation libs.androidx.lifecycle.livedata.ktx
+    implementation libs.androidx.lifecycle.viewmodel
+    implementation libs.androidx.activity.ktx
+    implementation libs.androidx.fragment.ktx
+    implementation libs.gson
+    kapt libs.androidx.hilt.compiler
     kapt libs.hilt.compiler
+
+    implementation libs.any.chart.android
+    implementation libs.androidx.lifecycle.runtime
+
+    implementation project(path: ':domain')
+    implementation project(path: ':data')
 
     testImplementation libs.test.junit4
     testImplementation libs.hilt.compiler

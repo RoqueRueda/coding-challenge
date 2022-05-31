@@ -5,23 +5,21 @@ import com.roque.rueda.gbm.coding.domain.error.ErrorResult
 import com.roque.rueda.gbm.coding.domain.error.NoConnectivityException
 import com.roque.rueda.gbm.coding.domain.ipc.model.IpcEntry
 import com.roque.rueda.gbm.coding.domain.ipc.repository.IpcRepository
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class GetIpcUseCase @Inject constructor(
     private val ipcRepository: IpcRepository
 ) {
 
-    @Throws(NoConnectivityException::class)
     suspend operator fun invoke() : DomainResult<List<IpcEntry>> {
         return try {
-            val result = ipcRepository.fetchIpcIndex()
-            DomainResult.createSuccess(result)
-        } catch (ex: NoConnectivityException) {
+            ipcRepository.fetchIpcIndex()
+        } catch (ex: Exception) {
             DomainResult.createFailure(
                 ErrorResult(
-                    code = ErrorResult.CODE_NO_CONNECTION,
+                    code = ErrorResult.UNKNOWN_ERROR,
                     message = ex.message.orEmpty()
                 )
             )

@@ -1,5 +1,4 @@
 plugins {
-
     alias libs.plugins.android.library
     alias libs.plugins.kotlin.android
     alias libs.plugins.kotlin.kapt
@@ -33,7 +32,6 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':data')
 
     implementation libs.androidx.core
     implementation libs.androidx.app.compat

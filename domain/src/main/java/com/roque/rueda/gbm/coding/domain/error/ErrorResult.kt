@@ -1,7 +1,7 @@
 package com.roque.rueda.gbm.coding.domain.error
 
 data class ErrorResult(
-    val code: Int = CODE_NO_CONNECTION,
+    val code: Int = UNKNOWN_ERROR,
     val message: String,
     val description: String = "",
     val cause: Throwable? = null
@@ -12,6 +12,7 @@ data class ErrorResult(
     }
 
     companion object {
-        const val CODE_NO_CONNECTION = -1
+        const val NO_CONNECTION = -1
+        const val UNKNOWN_ERROR = 0
     }
 }
