@@ -1,4 +1,4 @@
-package com.roque.rueda.gbm.coding.challenge
+package com.roque.rueda.gbm.coding.domain
 
 import com.roque.rueda.gbm.coding.domain.DomainResult
 import com.roque.rueda.gbm.coding.domain.DomainStatus

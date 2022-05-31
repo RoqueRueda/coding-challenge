@@ -1,11 +1,11 @@
-package com.roque.rueda.gbm.coding.challenge
+package com.roque.rueda.gbm.coding.domain
 
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.given
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
-import com.roque.rueda.gbm.coding.challenge.base.TestBase
 import com.roque.rueda.gbm.coding.domain.DomainResult
+import com.roque.rueda.gbm.coding.domain.base.TestBase
 import com.roque.rueda.gbm.coding.domain.error.ErrorResult
 import com.roque.rueda.gbm.coding.domain.error.NoConnectivityException
 import com.roque.rueda.gbm.coding.domain.ipc.repository.IpcRepository
