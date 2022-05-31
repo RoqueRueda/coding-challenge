@@ -3,7 +3,7 @@
 <hr>
 
 # Table of Contents
-* [Level 1] (#level-1)
+* [Level 1](#level-1)
 * [Team Members](#team-members)
 
 # <a name="level-1"></a>Level 1
