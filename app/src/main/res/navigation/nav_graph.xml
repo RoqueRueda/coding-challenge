@@ -11,18 +11,5 @@
         android:label="@string/ipc_fragment_label"
         tools:layout="@layout/fragment_ipc">
 
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.roque.rueda.gbm.coding.challenge.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/IpcFragment" />
     </fragment>
 </navigation>
