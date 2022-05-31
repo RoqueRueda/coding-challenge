@@ -9,10 +9,10 @@
 # <a name="level-1"></a>Level 1
 Chart with IPC Index
 
-![Chart 1](/screen-shoot/portrait.png)
+![Chart 1](/screen-shoots/portrait.png)
 Portrait
 
-![Chart 1](/screen-shoot/landscape.png)
+![Chart 1](/screen-shoots/landscape.png)
 Landscape
 
 # <a name="team-members"></a>Team Members
