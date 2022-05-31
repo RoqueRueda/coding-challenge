@@ -2,6 +2,7 @@ plugins {
     alias libs.plugins.android.application
     alias libs.plugins.kotlin.android
     alias libs.plugins.kotlin.kapt
+    alias libs.plugins.dagger.hilt
 }
 
 android {
@@ -23,6 +24,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "default"
+    productFlavors {
+        challenge {
+            dimension "default"
+            buildConfigField "String", "BASE_URL", "\"https://run.mocky.io\""
+            getIsDefault().set(true)
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -44,8 +55,42 @@ dependencies {
     implementation libs.navigation
     implementation libs.navigation.ui
     implementation libs.bundles.room
+    implementation libs.dagger.hilt
+    implementation libs.androidx.lifecycle.viewmodel.ktx
+    implementation libs.androidx.lifecycle.livedata.ktx
+    implementation libs.androidx.lifecycle.viewmodel
+    implementation libs.androidx.activity.ktx
+    implementation libs.androidx.fragment.ktx
+    implementation libs.gson
+    kapt libs.androidx.hilt.compiler
+    kapt libs.hilt.compiler
+
+    implementation libs.any.chart.android
+    implementation libs.androidx.lifecycle.runtime
+
+    implementation project(path: ':domain')
+    implementation project(path: ':data')
 
     testImplementation libs.test.junit4
+    testImplementation libs.hilt.compiler
+    kaptTest libs.hilt.compiler
+    testImplementation libs.mockito.core
+    testImplementation libs.mockito.inline
+    testImplementation libs.mockito.android
+    testImplementation libs.mockito.kotlin
+    testImplementation libs.kotlinx.coroutines.test
+    testImplementation libs.arch.core.testing
+
     androidTestImplementation libs.android.test.junit
     androidTestImplementation libs.android.test.expresso
+    androidTestImplementation libs.hilt.testing
+    kaptAndroidTest libs.hilt.compiler
+}
+
+kapt {
+    correctErrorTypes true
+}
+
+hilt {
+    enableAggregatingTask = true
 }
