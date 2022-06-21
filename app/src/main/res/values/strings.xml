@@ -47,4 +47,24 @@
     <string name="price">Precio</string>
     <string name="date">Fecha</string>
     <string name="ipc">IPC</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_login">Authenticate</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="unauthenticated_welcome_title">Login</string>
+
+    <string name="not_supported_biometrics_title">Biometrics are not supported 🫤</string>
+    <string name="not_supported_biometrics_message">Looks like your device does not support biometrics, we can not provide access to this app if you do not have biometrics</string>
+    <string name="biometrics_not_supported_fragment_title">Error</string>
+    <string name="biometrics_title">Biometrics</string>
+    <string name="biometrics_description">Authenticate using biometrics</string>
+    <string name="biometrics_negative">Cancel</string>
+    <string name="retry">Retry</string>
+    <string name="authentication_failed">Authentication Failed please verify your input</string>
+    <string name="authentication_error">Unknown error</string>
 </resources>

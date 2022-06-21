@@ -15,6 +15,10 @@ pluginManagement {
             if (requested.id.id == 'kotlinx-serialization') {
                 useModule("org.jetbrains.kotlin:kotlin-serialization:1.6.21")
             }
+
+            if (requested.id.id == 'androidx.navigation.safeargs.kotlin') {
+                useModule("androidx.navigation:navigation-safe-args-gradle-plugin:2.4.2")
+            }
         }
     }
 }

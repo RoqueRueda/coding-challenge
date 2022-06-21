@@ -1,4 +1,4 @@
-package com.roque.rueda.gbm.coding.challenge.ipc
+package com.roque.rueda.gbm.coding.challenge.ui.ipc
 
 import android.os.Build
 import android.os.Bundle
@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
-import androidx.core.view.marginBottom
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -56,18 +55,18 @@ class IpcFragment : Fragment() {
     private fun setupObservers() {
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                ipcViewModel.iuState.collect {
+                ipcViewModel.uiState.collect {
                     when (it) {
-                        is IpcIndexUiState.Error -> showError(it)
-                        IpcIndexUiState.Loading -> showLoading()
-                        is IpcIndexUiState.Success -> showChartData(it)
+                        is IpcIndexUIState.Error -> showError(it)
+                        IpcIndexUIState.Loading -> showLoading()
+                        is IpcIndexUIState.Success -> showChartData(it)
                     }
                 }
             }
         }
     }
 
-    private fun showChartData(success: IpcIndexUiState.Success) {
+    private fun showChartData(success: IpcIndexUIState.Success) {
         val data = success.ipcIndexList
 
         val anyChartView = binding.anyChartView
@@ -91,14 +90,12 @@ class IpcFragment : Fragment() {
             anyChartView.layoutParams.height = windowMetrics.bounds.height() / 2
         } else {
             val displayMetrics = DisplayMetrics()
-            val windowMetrics =
-                requireActivity().windowManager.defaultDisplay.getMetrics(displayMetrics)
             anyChartView.layoutParams.width = displayMetrics.widthPixels - 30
             anyChartView.layoutParams.height = displayMetrics.heightPixels / 2
         }
     }
 
-    private fun showError(error: IpcIndexUiState.Error) {
+    private fun showError(error: IpcIndexUIState.Error) {
         Snackbar.make(binding.anyChartView, error.errorResult.message, Snackbar.LENGTH_INDEFINITE)
             .setAnchorView(R.id.any_chart_view)
             .setAction("Retry") { ipcViewModel.fetchIpcIndex() }

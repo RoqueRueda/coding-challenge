@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/IpcFragment"
-        android:name="com.roque.rueda.gbm.coding.challenge.ipc.IpcFragment"
+        android:name="com.roque.rueda.gbm.coding.challenge.ui.ipc.IpcFragment"
         android:label="@string/ipc_fragment_label"
         tools:layout="@layout/fragment_ipc">
 

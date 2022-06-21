@@ -1,4 +1,4 @@
-package com.roque.rueda.gbm.coding.challenge.ipc
+package com.roque.rueda.gbm.coding.challenge.ui.ipc
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -17,22 +17,23 @@ class IpcViewModel @Inject constructor(
     private val getIpcUseCase: GetIpcUseCase
 ) : ViewModel() {
 
-    private val _iuState = MutableStateFlow<IpcIndexUiState>(IpcIndexUiState.Loading)
-    val iuState: StateFlow<IpcIndexUiState> = _iuState
+    private val _uiState = MutableStateFlow<IpcIndexUIState>(IpcIndexUIState.Loading)
+    val uiState: StateFlow<IpcIndexUIState> = _uiState
 
     fun fetchIpcIndex() {
-        _iuState.value = IpcIndexUiState.Loading
+        _uiState.value = IpcIndexUIState.Loading
         viewModelScope.launch {
             when(val result = getIpcUseCase()) {
-                is DomainResult.Failure -> _iuState.value = IpcIndexUiState.Error(result.errorResult)
-                is DomainResult.Success -> _iuState.value = IpcIndexUiState.Success(result.data)
+                is DomainResult.Failure -> _uiState.value =
+                    IpcIndexUIState.Error(result.errorResult)
+                is DomainResult.Success -> _uiState.value = IpcIndexUIState.Success(result.data)
             }
         }
     }
 }
 
-sealed class IpcIndexUiState {
-    object Loading: IpcIndexUiState()
-    data class Success(val ipcIndexList: List<IpcEntry>): IpcIndexUiState()
-    data class Error(val errorResult: ErrorResult): IpcIndexUiState()
+sealed class IpcIndexUIState {
+    object Loading: IpcIndexUIState()
+    data class Success(val ipcIndexList: List<IpcEntry>): IpcIndexUIState()
+    data class Error(val errorResult: ErrorResult): IpcIndexUIState()
 }

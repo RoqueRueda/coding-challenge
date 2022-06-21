@@ -1,4 +1,4 @@
-package com.roque.rueda.gbm.coding.challenge
+package com.roque.rueda.gbm.coding.challenge.ui
 
 import android.os.Bundle
 import android.view.Menu
@@ -11,7 +11,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.google.android.material.snackbar.Snackbar
+import com.roque.rueda.gbm.coding.challenge.R
 import com.roque.rueda.gbm.coding.challenge.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 

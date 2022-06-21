@@ -3,11 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/bg_gradient.xml" value="0.156" />
+        <entry key="app/src/main/res/drawable/error_bg_gradient.xml" value="0.155" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15885416666666666" />
+        <entry key="app/src/main/res/layout/activity_unauthenticated.xml" value="0.1" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.15885416666666666" />
+        <entry key="app/src/main/res/layout/content_unauthenticated.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_biometrics_not_supported.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.15885416666666666" />
         <entry key="app/src/main/res/layout/fragment_ipc.xml" value="0.16302083333333334" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.28804347826086957" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.12447916666666667" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.14635416666666667" />
       </map>
     </option>
   </component>

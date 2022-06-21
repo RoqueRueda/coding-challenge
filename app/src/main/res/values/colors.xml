@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray">#777373</color>
+    <color name="crimson_red">#C13B47</color>
+
+    <!-- Gradient colors-->
+    <color name="dark_blue">#083D57</color>
+    <color name="tool_bar_bg">#66083D57</color>
+    <color name="light_blue">#03A9F4</color>
+    <color name="blue">#3D96BE</color>
+    <color name="glow_blue">#073EE5</color>
 </resources>

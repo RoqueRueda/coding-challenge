@@ -14,5 +14,6 @@ data class ErrorResult(
     companion object {
         const val NO_CONNECTION = -1
         const val UNKNOWN_ERROR = 0
+        const val NO_BIOMETRICS = 900
     }
 }

@@ -4,7 +4,6 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import com.roque.rueda.gbm.coding.domain.base.TestBase
 import com.roque.rueda.gbm.coding.domain.error.ErrorResult
-import com.roque.rueda.gbm.coding.domain.error.NoConnectivityException
 import com.roque.rueda.gbm.coding.domain.ipc.model.IpcEntry
 import com.roque.rueda.gbm.coding.domain.ipc.repository.IpcRepository
 import com.roque.rueda.gbm.coding.domain.ipc.usecase.GetIpcUseCase

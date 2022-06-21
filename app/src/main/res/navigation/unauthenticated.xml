@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/unauthenticated"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.roque.rueda.gbm.coding.challenge.ui.login.LoginFragment"
+        android:label="@string/unauthenticated_welcome_title"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_biometricsNotSupportedFragment"
+            app:destination="@id/biometricsNotSupportedFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/biometricsNotSupportedFragment"
+        android:name="com.roque.rueda.gbm.coding.challenge.ui.login.BiometricsNotSupportedFragment"
+        android:label="@string/biometrics_not_supported_fragment_title"
+        tools:layout="@layout/fragment_biometrics_not_supported" />
+
+</navigation>

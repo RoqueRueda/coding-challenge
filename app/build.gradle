@@ -3,6 +3,7 @@ plugins {
     alias libs.plugins.kotlin.android
     alias libs.plugins.kotlin.kapt
     alias libs.plugins.dagger.hilt
+    alias libs.plugins.navigation.safe.args
 }
 
 android {
@@ -62,6 +63,8 @@ dependencies {
     implementation libs.androidx.activity.ktx
     implementation libs.androidx.fragment.ktx
     implementation libs.gson
+    implementation libs.biometric.ktx
+
     kapt libs.androidx.hilt.compiler
     kapt libs.hilt.compiler
 
